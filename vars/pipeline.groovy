@@ -5,6 +5,11 @@ pipeline{
         maven 'mymaven' 
     }
     stages{
+        stage('Checkout') {
+            steps{
+                checkout scm
+            }
+        }
         stage ('build and install'){
             steps{
                 sh "mvn clean install"
